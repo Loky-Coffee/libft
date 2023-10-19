@@ -6,13 +6,13 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:04:15 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/18 04:21:29 by aalatzas         ###   ########.fr       */
+/*   Updated: 2023/10/18 04:55:00 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	wortcounter(char const *s, char c)
+static int	wortcounter(char const *s, char c)
 {
 	int	i;
 	int	strcounter;
@@ -36,7 +36,7 @@ int	wortcounter(char const *s, char c)
 	return (strcounter);
 }
 
-int	mallocfree(char	**newarray, int i)
+static int	mallocfree(char	**newarray, int i)
 {
 	while (i > 0)
 	{
@@ -47,7 +47,7 @@ int	mallocfree(char	**newarray, int i)
 	return (0);
 }
 
-int	stringmake(int wortcount, char const *s, char c, char	**newarray)
+static int	stringmake(int wortcount, char const *s, char c, char	**newarray)
 {
 	int	i;
 	int	a;

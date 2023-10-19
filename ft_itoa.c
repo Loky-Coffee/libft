@@ -6,13 +6,13 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 03:15:06 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/18 02:06:02 by aalatzas         ###   ########.fr       */
+/*   Updated: 2023/10/18 04:55:16 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	intcount(int n)
+static int	intcount(int n)
 {
 	int	i;
 

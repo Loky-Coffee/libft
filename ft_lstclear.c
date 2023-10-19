@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 17:04:32 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/18 04:55:07 by aalatzas         ###   ########.fr       */
+/*   Created: 2023/10/19 03:27:28 by aalatzas          #+#    #+#             */
+/*   Updated: 2023/10/19 04:22:34 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	write(fd, s, ft_strlen(s));
+	t_list	*hier;
+	t_list	*next;
+
+	hier = *lst;
+	while (hier != NULL)
+	{
+		next = hier->next;
+		del(hier->content);
+		free(hier);
+		hier = next;
+	}
+	*lst = NULL;
 }

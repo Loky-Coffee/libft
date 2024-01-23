@@ -6,7 +6,7 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:04:15 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/18 04:55:00 by aalatzas         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:23:07 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,13 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	wortcount = wortcounter(s, c);
-	newarray = (char **)ft_calloc(wortcount + 1, (sizeof(char *)));
+	newarray = (char **)ft_calloc(wortcount + 1, sizeof(char *));
 	if (!newarray)
 		return (NULL);
-	if (s[0] == 0)
-	{
-		newarray[0] = 0;
-		return (newarray);
-	}
-	if (newarray == NULL)
-		return (NULL);
 	if (stringmake(wortcount, s, c, newarray) == 0)
-		return (0);
+	{
+		free(newarray);
+		return (NULL);
+	}
 	return (newarray);
 }

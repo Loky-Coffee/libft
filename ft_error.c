@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 03:07:39 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/31 14:48:18 by aalatzas         ###   ########.fr       */
+/*   Created: 2024/01/05 06:35:36 by aalatzas          #+#    #+#             */
+/*   Updated: 2024/01/05 08:33:49 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_error(char *str)
 {
-	unsigned int	i;
-	char			*a;
-
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	a = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (a == NULL)
-		return (NULL);
-	while (s[i] != '\0')
-	{
-		a[i] = f(i, s[i]);
-		i++;
-	}
-	return (a);
+	ft_putstr_fd(str, STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:42:36 by aalatzas          #+#    #+#             */
-/*   Updated: 2023/10/09 12:18:36 by aalatzas         ###   ########.fr       */
+/*   Updated: 2023/12/15 03:06:43 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	int	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	if (s[i] != '\0')
 	{

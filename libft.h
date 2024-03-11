@@ -6,7 +6,7 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:32:21 by aalatzas          #+#    #+#             */
-/*   Updated: 2024/01/05 08:34:11 by aalatzas         ###   ########.fr       */
+/*   Updated: 2024/03/11 21:27:40 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,20 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdint.h>
+# include <string.h>
+# include <stdarg.h>
+# include <signal.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_counter
+{
+	int	counter;
+}		t_counter;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
@@ -84,6 +92,18 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 	void(*del)(void *));
 int					ft_lstsize(t_list *lst);
 void				free_split(char **split_array);
-void				ft_error(char *str);
+void				ft_error(char *str, int exit_code);
+int					ft_is_min_nbr(int *arg);
+int					ft_is_max_nbr(int *arg);
+char				ft_bits_to_char(char *bits);
+void				ft_char_to_bits(char ch, char *bits);
+int					ft_printf(const char *input, ...);
+int					ft_putnbr_fd_printf(long int n, int fd, \
+	t_counter *data, char *basestr);
+size_t				ft_strlen_printf(const char *s);
+int					ft_putchar_fd_printf(int c, int fd, t_counter *data);
+int					ft_putstr_fd_printf(char *s, int fd, t_counter *data);
+int					ft_putptr_printf(unsigned long n, int fd, \
+	t_counter *data, char *basestr);
 
 #endif

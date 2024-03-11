@@ -6,7 +6,7 @@
 /*   By: aalatzas <aalatzas@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:28:44 by aalatzas          #+#    #+#             */
-/*   Updated: 2024/01/29 04:58:45 by aalatzas         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:44:55 by aalatzas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,27 @@ int	check_args(char template, va_list args, t_counter *data)
 		return (ft_putchar_fd_printf('%', 1, data));
 	return (1);
 }
-
+/*
+*@brief Implements a custom printf function for formatted output.
+*This function processes a format string and additional arguments
+*to produce output similar to the standard printf.
+*It supports custom format specifiers and handles variable arguments
+*using the stdarg library.
+*The function iterates through the format string, checking for the
+*'%' character to identify format specifiers.
+*When a format specifier is found, it processes the corresponding
+*argument from the variable arguments list
+*and formats it according to the specifier, handling special cases
+*like pointer address formatting with 'p'.
+*For regular characters, it simply writes them to the standard output.
+*The function keeps track of the total number of characters written and
+*returns this count upon completion.
+*In case of an error during writing or formatting, it returns -1.
+*@param input The format string containing text to be printed and format
+*specifiers for subsequent arguments.
+*@return The total number of characters written to the standard output;
+*returns -1 in case of an error.
+*/
 int	ft_printf(const char *input, ...)
 {
 	t_counter	data;

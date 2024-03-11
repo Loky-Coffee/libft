@@ -34,7 +34,7 @@ https://github.com/Loky-Coffee/libft.git
 3. Compile the library using the provided Makefile:
 ```bash
 make
-cc libft.a my_program.c 
+cc libft.a my_program.c
 ```
 
 ## Functions
@@ -90,7 +90,11 @@ Here is a list of functions available in `libft`:
 - `ft_error`: Display an error message to the standard error output.
 - `ft_is_min_nbr`: Check if a string represents the minimum possible integer.
 - `ft_is_max_nbr`: Check if a string represents the maximum possible integer.
-
+- `ft_bits_to_char`: Convert a sequence of bits into a char character.
+- `ft_char_to_bits`: Convert a char character into a sequence of bits.
+- `ft_is_max_nbr`: Check if a string represents the maximum possible integer value.
+- `ft_is_min_nbr`: Check if a string represents the minimum possible integer value.
+- `ft_printf`: A custom implementation of the printf function for formatted output.
 For detailed descriptions of each function, see their respective source code files.
 
 ## Usage

@@ -95,7 +95,8 @@ Here is a list of functions available in `libft`:
 - `ft_is_max_nbr`: Check if a string represents the maximum possible integer value.
 - `ft_is_min_nbr`: Check if a string represents the minimum possible integer value.
 - `ft_printf`: A custom implementation of the printf function for formatted output.
-For detailed descriptions of each function, see their respective source code files.
+
+`For detailed descriptions of each function, see their respective source code files.`
 
 ## Usage
 
